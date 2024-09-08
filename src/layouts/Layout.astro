@@ -1,0 +1,54 @@
+---
+import "@fontsource-variable/ibarra-real-nova"
+import '@fontsource-variable/jost';
+
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="TODO" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+		<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-solid.css">
+		<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-regular.css">
+		<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-light.css">
+
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	hr {
+    background-image: linear-gradient(to right, #c7b299 50%,transparent 0);
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+    border-bottom-width: 1px;
+    border-style: none;
+    border-color: #c7b299;
+	}
+
+	.bg-dashed {
+    background-image: repeating-linear-gradient(-60deg,#c7b299,#c7b299 4px,transparent 4px,transparent 6px,#c7b299 6px),repeating-linear-gradient(30deg,#c7b299,#c7b299 4px,transparent 4px,transparent 6px,#c7b299 6px),repeating-linear-gradient(120deg,#c7b299,#c7b299 4px,transparent 4px,transparent 6px,#c7b299 6px),repeating-linear-gradient(210deg,#c7b299,#c7b299 4px,transparent 4px,transparent 6px,#c7b299 6px);
+    background-size: 1px calc(100% + 14px),calc(100% + 14px) 1px,1px calc(100% + 14px),calc(100% + 14px) 1px;
+    background-position: 0 0,0 0,100% 0,0 100%;
+    background-repeat: no-repeat;
+	}
+</style>

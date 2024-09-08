@@ -1,0 +1,27 @@
+---
+const pages = [
+	{ name: "Home", href: "/" },
+	{ name: "Uniformes", href: "/uniformes" },
+	{ name: "Productos", href: "/productos" },
+	{ name: "Contacto", href: "/contacto" },
+	{ name: "Tienda", href: "/tienda" },
+]
+---
+
+<header class="absolute top-0 w-full z-10">
+	<nav class="text-white">
+		<div class="container mx-auto flex justify-between py-6">
+			<span class="font-ibarra italic text-lg">Email: <a href="mailto:contacto@sukitex.pe" class="relative before:absolute before:start-0 before:bottom-0 before:bg-white before:w-0 before:h-[0.5px] hover:before:w-full before:duration-200">contacto@sukitex.pe</a></span>
+			<a href="/" class="text-2xl tracking-widest">SUKITEX</a>
+			<span class="font-ibarra italic text-lg">Llámanos: <a href="https://wa.me/51948669513" class="relative before:absolute before:start-0 before:bottom-0 before:bg-white before:w-0 before:h-[0.5px] hover:before:w-full before:duration-200">+51 948 669 513</a></span>
+		</div>
+		
+		<hr>
+
+		<div class="container mx-auto flex justify-center gap-12 py-6">
+			{pages.map((page) => ( 
+				<a href={page.href} class="tracking-widest upp {extra}">{page.name}</a>
+			))}
+		</div>
+	</nav>
+</header>
