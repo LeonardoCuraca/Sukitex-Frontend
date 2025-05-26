@@ -69,10 +69,10 @@ import Layout from '@/layouts/Layout.astro';
 		</section>
 
 		<section class="py-24">
-			<div class="container mx-auto">
-				<div class="grid grid-cols-2 items-center">
+			<div class="container mx-auto px-6 sm:px-0">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
 					<div>
-						<h2 class="text-4xl mb-3">
+						<h2 class="text-2xl sm:text-4xl mb-3">
 							Tu satisfacción
 							<br>
 							es nuestra prioridad
@@ -95,7 +95,7 @@ import Layout from '@/layouts/Layout.astro';
 					<p class="font-ibarra italic text-gray-400">Explora los productos y servicios que ofrecemos según tu rubro</p>
 				</div>
 			</div>
-			<div id="services" class="container mx-auto splide" aria-label="Carousel">
+			<div id="services" class="container mx-auto px-6 sm:px-0 splide" aria-label="Carousel">
 				<div class="splide__track">
 					<div class="splide__list">
 						<div class="splide__slide">
@@ -294,7 +294,13 @@ import Layout from '@/layouts/Layout.astro';
 		perMove: 1,
 		gap: "4rem",
 		pagination: false,
-		arrows: false
+		arrows: false,
+		breakpoints: {
+			640: { perPage: 1 },
+			1024: { perPage: 2 },
+			1280: { perPage: 3 },
+			1536: { perPage: 4 }
+		}
 	}).mount();
 
 	new Splide("#slider", {
